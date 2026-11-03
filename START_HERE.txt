@@ -1,0 +1,24 @@
+VITALSENSE — WINDOWS SETUP
+
+Open PowerShell in this folder (the folder containing app, src, data, and requirements.txt).
+
+1) Create and activate the environment (Python 3.12 or 3.13 is recommended):
+   py -3.12 -m venv .venv
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   .\.venv\Scripts\Activate.ps1
+
+If you already created .venv with Python 3.14, do not recreate it unless needed.
+
+2) Install packages:
+   python -m pip install --upgrade pip
+   python -m pip install -r requirements.txt
+
+3) Rebuild the model file to fix a model-version compatibility error such as ModuleNotFoundError: No module named '_loss':
+   python -m src.train
+
+IMPORTANT: Run that command from the project root. Do NOT run `python src\train.py`; module mode ensures imports work.
+
+4) Start the app:
+   python -m streamlit run app/Home.py
+
+The app includes personal details, health history, usual readings, three days of readings, symptom selection, screening cards, explanations, trends and a report download. The model uses simulated training data; scores are educational indicators, not medical probabilities or diagnoses.

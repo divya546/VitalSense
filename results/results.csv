@@ -1,0 +1,6 @@
+condition,Model ROC-AUC,Model PR-AUC,Rule ROC-AUC
+infection,0.79,0.487,0.741
+cardiac,0.931,0.387,0.836
+stress,0.878,0.265,0.813
+diabetes,0.95,0.532,0.957
+apnea,0.907,0.472,0.646
